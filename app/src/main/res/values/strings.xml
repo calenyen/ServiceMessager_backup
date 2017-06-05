@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ServiceMessager</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="StartService">Start Service</string>
+    <string name="StopService">Stop Service</string>
+    <string name="txtRecvData">Data</string>
+    <string name="txtStartRun">Start Run</string>
+    <string name="txtStopRun">Stop Run</string>
+    <string name="lbtxt">Message</string>
+    <string name="btnSend">Send to Arduino</string>
+</resources>

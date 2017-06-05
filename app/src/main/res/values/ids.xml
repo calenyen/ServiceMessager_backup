@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="btnStartSerivce" type="id">btnStartSerivce</item>
+    <item name="btnartRun" type="id" />
+    <item name="btnStopRun" type="id">btnStopRun</item>
+    <item name="lbText" type="id">Message</item>
+</resources>

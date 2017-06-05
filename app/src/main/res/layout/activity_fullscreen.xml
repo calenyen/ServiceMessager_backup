@@ -1,0 +1,190 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0099cc"
+    tools:context="com.hwaling_tech.test.servicemessager.FullscreenActivity"
+    tools:ignore="NewApi">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp">
+
+        <Button
+            android:text="@string/StartService"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnStartService"
+            android:layout_width="wrap_content"
+            tools:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:onClick="BindServiceADK" />
+
+        <Button
+            android:text="@string/StopService"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnStopService"
+            android:layout_weight="1"
+            android:onClick="unBindServiceADK" />
+
+        <TextView
+            android:text="@string/txtRecvData"
+            android:layout_height="match_parent"
+            android:id="@+id/txtRecvData"
+            android:layout_weight="1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="18sp"
+            android:textAlignment="gravity"
+            android:layout_width="400dp" />
+
+    </LinearLayout>
+
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp">
+
+        <Button
+            android:text="@string/txtStartRun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnstartRun"
+            android:layout_weight="1"
+            android:onClick="startRun" />
+
+        <Button
+            android:text="@string/txtStopRun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnStopRun"
+            android:onClick="stopRun"
+            android:layout_weight="1" />
+
+        <TextView
+            android:text="@string/lbtxt"
+            android:layout_height="wrap_content"
+            android:id="@+id/lbText"
+            android:layout_weight="1"
+            android:textSize="18sp"
+            android:textAlignment="gravity"
+            android:layout_width="400dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="150dp">
+
+
+        <TextView
+
+            android:layout_height="wrap_content"
+            android:id="@+id/txtATemp"
+            android:layout_weight="1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="18sp"
+            android:textAlignment="gravity"
+            android:layout_width="50dp"
+            android:background="@android:color/holo_orange_light" />
+
+        <TextView
+
+            android:layout_height="wrap_content"
+            android:id="@+id/txtHmdty"
+            android:layout_weight="1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="18sp"
+            android:textAlignment="gravity"
+            android:layout_width="50dp"
+            android:background="@android:color/holo_red_light" />
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:id="@+id/txtRawCndct"
+            android:layout_weight="1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="18sp"
+            android:textAlignment="gravity"
+            android:layout_width="50dp"
+            android:background="@android:color/holo_orange_light" />
+
+        <TextView
+
+            android:layout_height="wrap_content"
+            android:id="@+id/txtRawTemp"
+            android:layout_weight="1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="18sp"
+            android:textAlignment="gravity"
+            android:layout_width="50dp"
+            android:background="@android:color/holo_red_light" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="200dp">
+
+        <Button
+            android:text="@string/btnSend"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnSend"
+            android:onClick="sendMsg"
+            android:layout_weight="1"
+            android:textAlignment="center" />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/fullscreen_content"
+        android:gravity="center"
+        android:keepScreenOn="true"
+        android:text="@string/dummy_content"
+        android:textColor="#33b5e5"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_marginTop="250dp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:id="@+id/fullscreen_content_controls"
+            style="?metaButtonBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:background="@color/black_overlay"
+            android:orientation="horizontal"
+            tools:ignore="UselessParent">
+
+            <Button
+                android:id="@+id/dummy_button"
+                style="?metaButtonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/dummy_button" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</FrameLayout>
