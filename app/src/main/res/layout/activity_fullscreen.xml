@@ -10,142 +10,196 @@
          is needed to present your content, e.g. VideoView, SurfaceView,
          TextureView, etc. -->
 
-    <LinearLayout
-        android:orientation="horizontal"
+    <TabHost
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="50dp">
+        android:layout_height="wrap_content"
+        android:id="@+id/tabHost"
+        tools:ignore="InvalidId">
 
-        <Button
-            android:text="@string/StartService"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnStartService"
-            android:layout_width="wrap_content"
-            tools:layout_width="wrap_content"
-            android:layout_weight="1"
-            android:onClick="BindServiceADK" />
-
-        <Button
-            android:text="@string/StopService"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnStopService"
-            android:layout_weight="1"
-            android:onClick="unBindServiceADK" />
-
-        <TextView
-            android:text="@string/txtRecvData"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/txtRecvData"
-            android:layout_weight="1"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textSize="18sp"
-            android:textAlignment="gravity"
-            android:layout_width="400dp" />
+            android:orientation="vertical">
 
-    </LinearLayout>
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/tab1"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent">
+
+                        <Button
+                            android:text="@string/StartService"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/btnStartService"
+                            android:layout_width="wrap_content"
+                            tools:layout_width="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="BindServiceADK"
+                            tools:ignore="ButtonStyle,NestedWeights" />
+
+                        <Button
+                            android:text="@string/StopService"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/btnStopService"
+                            android:layout_weight="1"
+                            android:onClick="unBindServiceADK"
+                            tools:ignore="ButtonStyle" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent">
+
+                        <Button
+                            android:text="@string/txtStartRun"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/btnstartRun"
+                            android:layout_weight="1"
+                            android:onClick="startRun"
+                            tools:ignore="ButtonStyle,NestedWeights" />
+
+                        <Button
+                            android:text="@string/txtStopRun"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/btnStopRun"
+                            android:onClick="stopRun"
+                            android:layout_weight="1"
+                            tools:ignore="ButtonStyle" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:text="@string/txtRecvData"
+                        android:layout_height="match_parent"
+                        android:id="@+id/txtRecvData"
+                        android:layout_weight="1"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textSize="18sp"
+                        android:textAlignment="gravity"
+                        android:layout_width="match_parent" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tab2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        tools:ignore="UselessParent">
+
+
+                        <TextView
+
+                            android:layout_height="wrap_content"
+                            android:id="@+id/txtATemp"
+                            android:layout_weight="1"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textSize="18sp"
+                            android:textAlignment="gravity"
+                            android:layout_width="50dp"
+                            android:background="@android:color/holo_orange_light"
+                            tools:ignore="NestedWeights" />
+
+                        <TextView
+
+                            android:layout_height="wrap_content"
+                            android:id="@+id/txtHmdty"
+                            android:layout_weight="1"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textSize="18sp"
+                            android:textAlignment="gravity"
+                            android:layout_width="50dp"
+                            android:background="@android:color/holo_red_light" />
+
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:id="@+id/txtRawCndct"
+                            android:layout_weight="1"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textSize="18sp"
+                            android:textAlignment="gravity"
+                            android:layout_width="50dp"
+                            android:background="@android:color/holo_orange_light" />
+
+                        <TextView
+
+                            android:layout_height="wrap_content"
+                            android:id="@+id/txtRawTemp"
+                            android:layout_weight="1"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textSize="18sp"
+                            android:textAlignment="gravity"
+                            android:layout_width="50dp"
+                            android:background="@android:color/holo_red_light" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tab3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        tools:ignore="UselessParent">
+
+                        <Button
+                            android:text="@string/btnSend"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/btnSend"
+                            android:onClick="sendMsg"
+                            android:layout_weight="1"
+                            android:textAlignment="center"
+                            android:layout_width="0dp" />
+
+                        <TextView
+                            android:text="@string/lbtxt"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/lbText"
+                            android:layout_weight="1"
+                            android:textSize="18sp"
+                            android:textAlignment="gravity"
+                            android:layout_width="0dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
 
     <!-- This FrameLayout insets its children based on system windows using
          android:fitsSystemWindows. -->
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="100dp">
-
-        <Button
-            android:text="@string/txtStartRun"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnstartRun"
-            android:layout_weight="1"
-            android:onClick="startRun" />
-
-        <Button
-            android:text="@string/txtStopRun"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnStopRun"
-            android:onClick="stopRun"
-            android:layout_weight="1" />
-
-        <TextView
-            android:text="@string/lbtxt"
-            android:layout_height="wrap_content"
-            android:id="@+id/lbText"
-            android:layout_weight="1"
-            android:textSize="18sp"
-            android:textAlignment="gravity"
-            android:layout_width="400dp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="150dp">
-
-
-        <TextView
-
-            android:layout_height="wrap_content"
-            android:id="@+id/txtATemp"
-            android:layout_weight="1"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textSize="18sp"
-            android:textAlignment="gravity"
-            android:layout_width="50dp"
-            android:background="@android:color/holo_orange_light" />
-
-        <TextView
-
-            android:layout_height="wrap_content"
-            android:id="@+id/txtHmdty"
-            android:layout_weight="1"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textSize="18sp"
-            android:textAlignment="gravity"
-            android:layout_width="50dp"
-            android:background="@android:color/holo_red_light" />
-
-        <TextView
-            android:layout_height="wrap_content"
-            android:id="@+id/txtRawCndct"
-            android:layout_weight="1"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textSize="18sp"
-            android:textAlignment="gravity"
-            android:layout_width="50dp"
-            android:background="@android:color/holo_orange_light" />
-
-        <TextView
-
-            android:layout_height="wrap_content"
-            android:id="@+id/txtRawTemp"
-            android:layout_weight="1"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textSize="18sp"
-            android:textAlignment="gravity"
-            android:layout_width="50dp"
-            android:background="@android:color/holo_red_light" />
-
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="200dp">
-
-        <Button
-            android:text="@string/btnSend"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnSend"
-            android:onClick="sendMsg"
-            android:layout_weight="1"
-            android:textAlignment="center" />
-    </LinearLayout>
 
 
     <TextView
